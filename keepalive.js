@@ -1,2 +1,5 @@
 const http = require('http');
-http.createServer((req, res) => res.end("ok")).listen(3000);
+const port = process.env.PORT || 3000;
+http.createServer((req, res) => res.end('ok')).listen(port, () => {
+  console.log('keepalive listening on', port);
+});
